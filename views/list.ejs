@@ -1,0 +1,46 @@
+<html lang="en">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<body>
+
+  <div class="container col-8">
+    
+    <button type = "submit" class="btn btn-lg btn-block"> 
+         <a class="btn btn-dark px-4 py-2 text-white"style="text-decoration: none"href="/form">
+           Dang bai
+      </a>
+    </button>
+
+    <table class="table table-bordered">
+      <tr class="table-dark">
+            <th scope="col" > ID</th>
+            <th scope="col"> Tên</th>
+            <th scope="col"> Role</th>
+            <th scope="col"> CreatedAt</th>
+            <th scope="col"></th>
+        </tr>
+            <% for (let a of users ) { %>
+        <tr>
+            <th><%= a.id %></th> 
+            <th> <%= a.username %></th>
+        	<th> <%= a.role %> </th>
+            <th> <%= a.createdAt %></th>
+            <th>
+             <form action ="<%=a.id%>", method = "get"> 
+                <button type = "submit" class="btn btn-dark btn-lg btn-block">xóa</button>
+                </form>
+                
+               
+             </th>
+        
+        </tr>
+        <% } %>
+    </table>
+  </div>
+</body>
+</html>
+
+     
+
+
+
